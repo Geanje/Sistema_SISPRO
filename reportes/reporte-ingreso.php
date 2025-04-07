@@ -245,20 +245,19 @@ setlocale(LC_TIME, 'spanish');
 		<!-- Total -->
 		<br><br>
 		<table style="border: solid 0.3px #000; width: 100%;">
-			<tr class="productos" style="text-align: center;">
+			<tr class="productos" style="width: 100%; text-align: center;">
 				<!-- Columna 1: Total a Pagar -->
-				<td style="width: 40%; text-align: right; border: solid 0.3px #000;">
+				<td colspan="4" style="width: 88%; text-align: right; border: solid 0.3px #000;">
 					<strong>Total a Pagar:</strong>
 				</td>
 
 				<!-- Columna 2: Monto total -->
-				<td style="width: 60%; text-align: center; border: solid 0.3px #000;">
+				<td style="width: 12%; text-align: center; border: solid 0.3px #000;">
 					<strong><?php echo number_format($total, 2, '.', ','); ?></strong>
 				</td>
 			</tr>
 		</table>
 	</div>
-
 
 </body>
 
