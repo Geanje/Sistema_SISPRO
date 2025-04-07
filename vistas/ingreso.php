@@ -80,7 +80,8 @@ if($_SESSION['compras']==1)
                         <div class="form-group col-lg-8 col-md-8 col-sm-8 col-xs-12">
                           <label>Proveedor:</label>
                           <input type="hidden" name="idingreso" id="idingreso">
-                          <select id ="idproveedor" name="idproveedor" class="form-control selectpicker" data-live-search="true" required>
+                          <!-- Eliminar el required -->
+                          <select id ="idproveedor" name="idproveedor" class="form-control selectpicker" data-live-search="true">
 
                           </select>
 

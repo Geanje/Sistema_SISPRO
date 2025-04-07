@@ -24,6 +24,27 @@ function init() {
   $.post('../ajax/ingreso.php?op=selectProveedor', function (r) {
     $('#idproveedor').html(r);
     $('#idproveedor').selectpicker('refresh');
+    // ----------------------------------------------------------------------------------
+    // Configuración del autocompletado
+		 var $searchInput = $('.bootstrap-select .dropdown-menu .bs-searchbox input');
+    
+		 $searchInput.on('input', function() {
+			 var searchText = $(this).val().toLowerCase();
+			 var $select = $('#idproveedor');
+			 var $options = $select.find('option');
+			 
+			 var $visibleOptions = $options.filter(function() {
+				 return $(this).text().toLowerCase().includes(searchText);
+			 });
+	 
+			 if ($visibleOptions.length === 1) {
+				 var selectedValue = $visibleOptions.first().val();
+				 $select.val(selectedValue);
+				 $select.selectpicker('refresh');
+				 $select.trigger('change');
+			 }
+		 });
+     // ----------------------------------------------------------------------------------
   });
   $('#cuota').change(calcularcuotas);
   $('#cuota').keyup(calcularcuotas);
