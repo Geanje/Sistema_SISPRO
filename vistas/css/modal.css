@@ -1,0 +1,200 @@
+
+input[type="file"]::-webkit-file-upload-button {
+background: rgb(145, 148, 151);
+border: 1px solid #ccc;
+border-radius: 5px;
+padding: 5px 10px;
+font-size: 14px;
+color: white;
+cursor: pointer;
+}
+
+
+input[type="file"]::-webkit-file-upload-button:hover {
+background: rgb(3, 136, 183);
+}
+
+.form-container {
+display: flex;
+align-items: center;
+gap: 5px;
+/* Espacio reducido entre elementos */
+}
+
+.file-upload {
+display: flex;
+margin-left: 4%;
+width: 62%;
+align-items: center;
+gap: 10px;
+}
+
+#botonProcesar {
+margin-left: 10px;
+width: 40%;
+/* Eliminar la separación */
+padding: 8px 12px;
+}
+
+.steps,
+.considerations {
+width: 35%;
+text-align: left;
+}
+
+/* Secciones de información */
+.info-section {
+display: flex;
+justify-content: space-evenly;
+/* Distribuye mejor el espacio */
+gap: 150px;
+/* Aumenta la separación entre los elementos */
+width: 100%;
+/* Asegura que ocupe todo el ancho */
+}
+
+.steps,
+.considerations {
+width: 35%;
+text-align: left;
+}
+
+.warning {
+color: red;
+font-weight: bold;
+}
+
+.log-section {
+font-size: 10px;
+border-top: 1px solid #ddd;
+padding-top: 10px;
+}
+
+.importar-titulo {
+text-align: center;
+font-size: 18px;
+font-weight: bold;
+padding: 10px;
+background-color: #f1f1f1;
+border-bottom: 1px solid #ccc;
+}
+.modal {
+display: none;
+position: fixed;
+z-index: 999s;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-contenido {
+background: white;
+padding: 15px;
+margin: 5% auto;
+width: 50%;
+max-height: 85vh;
+border-radius: 8px;
+position: relative;
+box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+overflow-y: auto;
+/* Menos marcado */
+}
+
+.importar-titulo {
+text-align: left;
+/* Cambiado de center a left */
+font-size: 18px;
+font-weight: bold;
+padding: 8px 10px;
+/* Ajuste del padding */
+background-color: #f9f9f9;
+/* Color más claro */
+border-bottom: 1px solid #ddd;
+}
+
+.importar-titulo h4 {
+text-align: left;
+font-size: 16px;
+font-weight: bold;
+padding: 8px;
+background-color: #f1f1f1;
+border-bottom: none;
+color: #000;
+}
+
+.file-upload {
+display: flex;
+align-items: center;
+gap: 10px;
+border: 1px solid #ccc;
+/* Agrega el marco */
+padding: 5px;
+border-radius: 5px;
+}
+
+.cerrar {
+position: absolute;
+top: 35px;
+right: 20px;
+font-size: 24px;
+cursor: pointer;
+color: #666;
+width: 30px;
+height: 30px;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 50%;
+transition: all 0.3s ease;
+}
+
+.cerrar:hover {
+background-color: #e0e0e0;
+color: #333;
+transform: scale(1.1);
+}
+
+.file-container {
+display: flex;
+align-items: center;
+margin-left: 4%;
+background: #f8f9fa;
+padding: 10px;
+border-radius: 5px;
+max-width: 330px;
+box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.file-icon {
+font-size: 24px;
+margin-right: 5px;
+color: #28a745;
+}
+
+.file-info {
+flex-grow: 1;
+text-align: left;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+
+.file-name {
+font-weight: bold;
+font-size: 12px;
+}
+
+.file-size {
+font-size: 10px;
+color: gray;
+}
+
+.delete-icon {
+cursor: pointer;
+color: gray;
+font-size: 16px;
+margin-left: 5px;
+transition: color 0.3s;
+}

@@ -1,0 +1,193 @@
+[13-Aug-2023 11:37:43 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/soluciones/public_html/sistema/soluciones/config/global2.php:1) in /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php on line 26
+[13-Aug-2023 11:38:00 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/soluciones/public_html/sistema/soluciones/config/global2.php:1) in /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php on line 26
+[13-Aug-2023 13:20:20 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/soluciones/public_html/sistema/soluciones/config/global2.php:1) in /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php on line 26
+[13-Aug-2023 13:22:07 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/soluciones/public_html/sistema/soluciones/config/global2.php:1) in /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php on line 33
+[13-Aug-2023 20:53:26 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/soluciones/public_html/sistema/soluciones/config/global2.php:1) in /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php on line 26
+[13-Aug-2023 20:53:37 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/soluciones/public_html/sistema/soluciones/config/global2.php:1) in /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php on line 26
+[13-Aug-2023 20:53:45 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/soluciones/public_html/sistema/soluciones/config/global2.php:1) in /home/soluciones/public_html/sistema/soluciones/practica/eliminar_practicante.php on line 10
+[13-Aug-2023 20:53:58 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/soluciones/public_html/sistema/soluciones/config/global2.php:1) in /home/soluciones/public_html/sistema/soluciones/practica/eliminar_practicante.php on line 10
+[13-Aug-2023 20:54:26 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/soluciones/public_html/sistema/soluciones/config/global2.php:1) in /home/soluciones/public_html/sistema/soluciones/practica/eliminar_practicante.php on line 10
+[13-Aug-2023 20:55:29 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/soluciones/public_html/sistema/soluciones/config/global2.php:1) in /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php on line 26
+[15-Aug-2023 10:41:51 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/soluciones/public_html/sistema/soluciones/config/global2.php:1) in /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php on line 26
+[15-Aug-2023 10:42:00 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/soluciones/public_html/sistema/soluciones/config/global2.php:1) in /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php on line 26
+[15-Aug-2023 10:43:59 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/soluciones/public_html/sistema/soluciones/config/global2.php:1) in /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php on line 26
+[15-Aug-2023 10:45:04 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/soluciones/public_html/sistema/soluciones/config/global2.php:1) in /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php on line 26
+[16-Aug-2023 03:06:01 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/soluciones/public_html/sistema/soluciones/config/global2.php:1) in /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php on line 26
+[21-Aug-2023 10:43:10 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/soluciones/public_html/sistema/soluciones/config/global2.php:1) in /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php on line 26
+[21-Aug-2023 10:43:20 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/soluciones/public_html/sistema/soluciones/config/global2.php:1) in /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php on line 26
+[25-Aug-2023 09:57:22 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/soluciones/public_html/sistema/soluciones/config/global2.php:1) in /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php on line 33
+[08-Aug-2024 19:08:34 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Practicantes::insertar(), 11 passed in /home/soluciones/public_html/sistema/soluciones/practica/registro.php on line 22 and exactly 13 expected in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php:12
+Stack trace:
+#0 /home/soluciones/public_html/sistema/soluciones/practica/registro.php(22): Practicantes->insertar('Miker Armando M...', 'Senati', '72723528', 'CFP HUAURA SENA...', 'Desarrollo de S...', 'Remoto', 'armandomiker99@...', '924814700', '2024-08-08', '2024-12-30', 'Activo')
+#1 {main}
+  thrown in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php on line 12
+[08-Aug-2024 19:21:36 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Practicantes::insertar(), 11 passed in /home/soluciones/public_html/sistema/soluciones/practica/registro.php on line 22 and exactly 13 expected in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php:12
+Stack trace:
+#0 /home/soluciones/public_html/sistema/soluciones/practica/registro.php(22): Practicantes->insertar('Miker Armando M...', 'Senati ', '72723528', 'CFP Huaura sena...', 'Desarrollo de S...', 'Remoto', 'armandomiker99@...', '924814700', '2024-08-08', '2024-11-30', 'Activo')
+#1 {main}
+  thrown in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php on line 12
+[08-Aug-2024 19:22:44 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Practicantes::insertar(), 11 passed in /home/soluciones/public_html/sistema/soluciones/practica/registro.php on line 22 and exactly 13 expected in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php:12
+Stack trace:
+#0 /home/soluciones/public_html/sistema/soluciones/practica/registro.php(22): Practicantes->insertar('Lincol Fabrisio...', 'SENATI', '72839408', 'HUAURA', 'Desarrollo de S...', 'Remoto', 'victorioatanaci...', '953091469', '2024-08-08', '2024-11-29', 'Activo')
+#1 {main}
+  thrown in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php on line 12
+[08-Aug-2024 19:24:23 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Practicantes::insertar(), 11 passed in /home/soluciones/public_html/sistema/soluciones/practica/registro.php on line 22 and exactly 13 expected in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php:12
+Stack trace:
+#0 /home/soluciones/public_html/sistema/soluciones/practica/registro.php(22): Practicantes->insertar('Bilha Eunice Na...', 'Senati', '75267455', 'Huaura', 'Desarrollo de S...', 'Remoto', 'nacionbilha@gma...', '901781787', '2024-08-08', '2024-11-29', 'Activo')
+#1 {main}
+  thrown in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php on line 12
+[08-Aug-2024 19:25:59 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Practicantes::insertar(), 11 passed in /home/soluciones/public_html/sistema/soluciones/practica/registro.php on line 22 and exactly 13 expected in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php:12
+Stack trace:
+#0 /home/soluciones/public_html/sistema/soluciones/practica/registro.php(22): Practicantes->insertar('Bilha Eunice Na...', 'Senati', '75267455', 'Huaura', 'Desarrollo de S...', 'Remoto', 'nacionbilha@gma...', '901781787', '2024-08-08', '2024-11-29', 'Activo')
+#1 {main}
+  thrown in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php on line 12
+[08-Aug-2024 19:29:12 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Practicantes::insertar(), 11 passed in /home/soluciones/public_html/sistema/soluciones/practica/registro.php on line 22 and exactly 13 expected in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php:12
+Stack trace:
+#0 /home/soluciones/public_html/sistema/soluciones/practica/registro.php(22): Practicantes->insertar('Bilha Eunice Na...', 'Senati', '75267455', 'Huaura', 'Desarrollo de S...', 'Remoto', 'nacionbilha@gma...', '901781787', '2024-08-08', '2024-11-29', 'Activo')
+#1 {main}
+  thrown in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php on line 12
+[08-Aug-2024 20:08:03 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Practicantes::insertar(), 11 passed in /home/soluciones/public_html/sistema/soluciones/practica/registro.php on line 22 and exactly 13 expected in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php:12
+Stack trace:
+#0 /home/soluciones/public_html/sistema/soluciones/practica/registro.php(22): Practicantes->insertar('Armando Melgare...', 'Senati', '72723528', 'CFP HUAURA SENA...', 'Desarrollo de S...', 'Remoto', 'armandomiker99@...', '924814700', '2024-08-08', '2024-11-29', 'Activo')
+#1 {main}
+  thrown in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php on line 12
+[08-Aug-2024 20:08:06 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Practicantes::insertar(), 11 passed in /home/soluciones/public_html/sistema/soluciones/practica/registro.php on line 22 and exactly 13 expected in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php:12
+Stack trace:
+#0 /home/soluciones/public_html/sistema/soluciones/practica/registro.php(22): Practicantes->insertar('Armando Melgare...', 'Senati', '72723528', 'CFP HUAURA SENA...', 'Desarrollo de S...', 'Remoto', 'armandomiker99@...', '924814700', '2024-08-08', '2024-11-29', 'Activo')
+#1 {main}
+  thrown in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php on line 12
+[08-Aug-2024 20:08:08 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Practicantes::insertar(), 11 passed in /home/soluciones/public_html/sistema/soluciones/practica/registro.php on line 22 and exactly 13 expected in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php:12
+Stack trace:
+#0 /home/soluciones/public_html/sistema/soluciones/practica/registro.php(22): Practicantes->insertar('Armando Melgare...', 'Senati', '72723528', 'CFP HUAURA SENA...', 'Desarrollo de S...', 'Remoto', 'armandomiker99@...', '924814700', '2024-08-08', '2024-11-29', 'Activo')
+#1 {main}
+  thrown in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php on line 12
+[08-Aug-2024 20:08:37 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Practicantes::insertar(), 11 passed in /home/soluciones/public_html/sistema/soluciones/practica/registro.php on line 22 and exactly 13 expected in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php:12
+Stack trace:
+#0 /home/soluciones/public_html/sistema/soluciones/practica/registro.php(22): Practicantes->insertar('Armando Melgare...', 'Senati', '72723528', 'CFP HUAURA SENA...', 'Desarrollo de S...', 'Remoto', 'armandomiker99@...', '924814700', '2024-08-08', '2024-11-29', 'Activo')
+#1 {main}
+  thrown in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php on line 12
+[08-Aug-2024 20:09:04 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Practicantes::insertar(), 11 passed in /home/soluciones/public_html/sistema/soluciones/practica/registro.php on line 22 and exactly 13 expected in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php:12
+Stack trace:
+#0 /home/soluciones/public_html/sistema/soluciones/practica/registro.php(22): Practicantes->insertar('Armando Melgare...', 'Senati', '72723528', 'CFP HUAURA SENA...', 'Desarrollo de S...', 'Remoto', 'armandomiker99@...', '924814700', '2024-08-08', '2024-11-29', 'Activo')
+#1 {main}
+  thrown in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php on line 12
+[14-Aug-2024 11:15:50 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Practicantes::insertar(), 11 passed in /home/soluciones/public_html/sistema/soluciones/practica/registro.php on line 22 and exactly 13 expected in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php:12
+Stack trace:
+#0 /home/soluciones/public_html/sistema/soluciones/practica/registro.php(22): Practicantes->insertar('Jos\xC3\xA9 Alberto B...', 'Senati ', '60769894', 'Los olivos ', 'Desarrollo de S...', 'Remoto', 'josebravoespino...', '982848321', '2024-08-18', '2024-12-08', 'Activo')
+#1 {main}
+  thrown in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php on line 12
+[14-Aug-2024 11:19:08 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Practicantes::insertar(), 11 passed in /home/soluciones/public_html/sistema/soluciones/practica/registro.php on line 22 and exactly 13 expected in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php:12
+Stack trace:
+#0 /home/soluciones/public_html/sistema/soluciones/practica/registro.php(22): Practicantes->insertar('Jos\xC3\xA9 Alberto B...', 'Senati ', '60769894', 'Los olivos ', 'Desarrollo de S...', 'Remoto', 'josebravoespino...', '982848321', '2024-08-18', '2024-12-08', 'Activo')
+#1 {main}
+  thrown in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php on line 12
+[14-Aug-2024 11:19:56 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Practicantes::insertar(), 11 passed in /home/soluciones/public_html/sistema/soluciones/practica/registro.php on line 22 and exactly 13 expected in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php:12
+Stack trace:
+#0 /home/soluciones/public_html/sistema/soluciones/practica/registro.php(22): Practicantes->insertar('Jos\xC3\xA9 Alberto B...', 'Senati ', '60769894', 'Los olivos ', 'Desarrollo de S...', 'Remoto', 'josebravoespino...', '982848321', '2024-08-18', '2024-12-08', 'Activo')
+#1 {main}
+  thrown in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php on line 12
+[14-Aug-2024 11:43:49 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Practicantes::insertar(), 11 passed in /home/soluciones/public_html/sistema/soluciones/practica/registro.php on line 22 and exactly 13 expected in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php:12
+Stack trace:
+#0 /home/soluciones/public_html/sistema/soluciones/practica/registro.php(22): Practicantes->insertar('Jos\xC3\xA9 Alberto B...', 'SENATI', '60769894', 'Independencia', 'Desarrollo de S...', 'Remoto', 'josebravoespino...', '982848321', '2024-08-14', '2024-12-08', 'Activo')
+#1 {main}
+  thrown in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php on line 12
+[21-Aug-2024 21:14:11 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Practicantes::editar(), 12 passed in /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php on line 21 and exactly 14 expected in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php:26
+Stack trace:
+#0 /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php(21): Practicantes->editar('192', 'Almir Wilfredo ...', 'SENATI', '74805877', 'INDEPENDENCIA', 'Desarrollo de S...', 'Remoto', '1483301@senati....', '902893467', '2024-08-19', '2024-12-08', 'Activo')
+#1 {main}
+  thrown in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php on line 26
+[21-Aug-2024 21:14:16 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Practicantes::editar(), 12 passed in /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php on line 21 and exactly 14 expected in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php:26
+Stack trace:
+#0 /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php(21): Practicantes->editar('192', 'Almir Wilfredo ...', 'SENATI', '74805877', 'INDEPENDENCIA', 'Desarrollo de S...', 'Remoto', '1483301@senati....', '902893467', '2024-08-19', '2024-12-08', 'Activo')
+#1 {main}
+  thrown in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php on line 26
+[21-Aug-2024 21:14:22 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Practicantes::editar(), 12 passed in /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php on line 21 and exactly 14 expected in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php:26
+Stack trace:
+#0 /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php(21): Practicantes->editar('192', 'Almir Wilfredo ...', 'SENATI', '74805877', 'INDEPENDENCIA', 'Desarrollo de S...', 'Remoto', '1483301@senati....', '902893467', '2024-08-19', '2024-12-08', 'Activo')
+#1 {main}
+  thrown in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php on line 26
+[21-Aug-2024 21:14:30 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Practicantes::editar(), 12 passed in /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php on line 21 and exactly 14 expected in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php:26
+Stack trace:
+#0 /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php(21): Practicantes->editar('192', 'Almir Wilfredo ...', 'SENATI', '74805877', 'INDEPENDENCIA', 'Desarrollo de S...', 'Remoto', '1483301@senati....', '902893467', '2024-08-19', '2024-12-08', 'Activo')
+#1 {main}
+  thrown in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php on line 26
+[21-Aug-2024 21:24:20 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Practicantes::editar(), 12 passed in /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php on line 21 and exactly 14 expected in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php:26
+Stack trace:
+#0 /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php(21): Practicantes->editar('191', 'Eber Jose Suyur...', 'Senati', '75119417', 'Independencia', 'Desarrollo de S...', 'Remoto', '1515146@senati....', '965284751', '2024-08-19', '2024-12-08', 'Activo')
+#1 {main}
+  thrown in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php on line 26
+[21-Aug-2024 21:24:22 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Practicantes::editar(), 12 passed in /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php on line 21 and exactly 14 expected in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php:26
+Stack trace:
+#0 /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php(21): Practicantes->editar('191', 'Eber Jose Suyur...', 'Senati', '75119417', 'Independencia', 'Desarrollo de S...', 'Remoto', '1515146@senati....', '965284751', '2024-08-19', '2024-12-08', 'Activo')
+#1 {main}
+  thrown in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php on line 26
+[21-Aug-2024 21:24:24 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Practicantes::editar(), 12 passed in /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php on line 21 and exactly 14 expected in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php:26
+Stack trace:
+#0 /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php(21): Practicantes->editar('191', 'Eber Jose Suyur...', 'Senati', '75119417', 'Independencia', 'Desarrollo de S...', 'Remoto', '1515146@senati....', '965284751', '2024-08-19', '2024-12-08', 'Activo')
+#1 {main}
+  thrown in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php on line 26
+[21-Aug-2024 21:24:27 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Practicantes::editar(), 12 passed in /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php on line 21 and exactly 14 expected in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php:26
+Stack trace:
+#0 /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php(21): Practicantes->editar('191', 'Eber Jose Suyur...', 'Senati', '75119417', 'Independencia', 'Desarrollo de S...', 'Remoto', '1515146@senati....', '965284751', '2024-08-19', '2024-12-08', 'Activo')
+#1 {main}
+  thrown in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php on line 26
+[21-Aug-2024 21:25:58 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Practicantes::editar(), 12 passed in /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php on line 21 and exactly 14 expected in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php:26
+Stack trace:
+#0 /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php(21): Practicantes->editar('191', 'Eber Jose Suyur...', 'Senati', '75119417', 'Lima Callao', 'Desarrollo de S...', 'Remoto', '1515146@senati....', '965284751', '2024-08-19', '2024-12-08', 'Activo')
+#1 {main}
+  thrown in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php on line 26
+[21-Aug-2024 21:26:00 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Practicantes::editar(), 12 passed in /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php on line 21 and exactly 14 expected in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php:26
+Stack trace:
+#0 /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php(21): Practicantes->editar('191', 'Eber Jose Suyur...', 'Senati', '75119417', 'Lima Callao', 'Desarrollo de S...', 'Remoto', '1515146@senati....', '965284751', '2024-08-19', '2024-12-08', 'Activo')
+#1 {main}
+  thrown in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php on line 26
+[21-Aug-2024 21:26:02 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Practicantes::editar(), 12 passed in /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php on line 21 and exactly 14 expected in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php:26
+Stack trace:
+#0 /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php(21): Practicantes->editar('191', 'Eber Jose Suyur...', 'Senati', '75119417', 'Lima Callao', 'Desarrollo de S...', 'Remoto', '1515146@senati....', '965284751', '2024-08-19', '2024-12-08', 'Activo')
+#1 {main}
+  thrown in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php on line 26
+[21-Aug-2024 21:27:32 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Practicantes::editar(), 12 passed in /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php on line 21 and exactly 14 expected in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php:26
+Stack trace:
+#0 /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php(21): Practicantes->editar('191', 'Eber Jose Suyur...', 'Senati', '75119417', 'Independencia', 'Desarrollo de S...', 'Remoto', '1515146@senati....', '965284751', '2024-08-19', '2024-12-08', 'Activo')
+#1 {main}
+  thrown in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php on line 26
+[21-Aug-2024 21:27:36 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Practicantes::editar(), 12 passed in /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php on line 21 and exactly 14 expected in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php:26
+Stack trace:
+#0 /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php(21): Practicantes->editar('191', 'Eber Jose Suyur...', 'Senati', '75119417', 'Independencia', 'Desarrollo de S...', 'Remoto', '1515146@senati....', '965284751', '2024-08-19', '2024-12-08', 'Activo')
+#1 {main}
+  thrown in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php on line 26
+[21-Aug-2024 21:29:53 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Practicantes::editar(), 12 passed in /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php on line 21 and exactly 14 expected in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php:26
+Stack trace:
+#0 /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php(21): Practicantes->editar('194', 'Jianpierre Giov...', 'Senati', '75210034', 'Independencia', 'Desarrollo de S...', 'Remoto', 'jeanpierremoron...', '913503284', '2024-08-21', '2024-12-08', 'Activo')
+#1 {main}
+  thrown in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php on line 26
+[21-Aug-2024 21:30:39 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Practicantes::editar(), 12 passed in /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php on line 21 and exactly 14 expected in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php:26
+Stack trace:
+#0 /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php(21): Practicantes->editar('191', 'Eber Jose Suyur...', 'Senati', '75119417', 'Lima Callao', 'Desarrollo de S...', 'Remoto', '1515146@senati....', '965284751', '2024-08-19', '2024-12-08', 'Activo')
+#1 {main}
+  thrown in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php on line 26
+[21-Aug-2024 21:30:40 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Practicantes::editar(), 12 passed in /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php on line 21 and exactly 14 expected in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php:26
+Stack trace:
+#0 /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php(21): Practicantes->editar('191', 'Eber Jose Suyur...', 'Senati', '75119417', 'Lima Callao', 'Desarrollo de S...', 'Remoto', '1515146@senati....', '965284751', '2024-08-19', '2024-12-08', 'Activo')
+#1 {main}
+  thrown in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php on line 26
+[22-Aug-2024 17:26:02 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Practicantes::editar(), 12 passed in /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php on line 21 and exactly 14 expected in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php:26
+Stack trace:
+#0 /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php(21): Practicantes->editar('198', 'Chris Julio Alb...', 'SENATI', '60791391', 'Independencia', 'Desarrollo de S...', 'Remoto', 'huarisuecasulca...', '958075362', '2024-08-19', '2024-12-06', 'Activo')
+#1 {main}
+  thrown in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php on line 26
+[22-Aug-2024 17:26:06 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Practicantes::editar(), 12 passed in /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php on line 21 and exactly 14 expected in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php:26
+Stack trace:
+#0 /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php(21): Practicantes->editar('198', 'Chris Julio Alb...', 'SENATI', '60791391', 'Independencia', 'Desarrollo de S...', 'Remoto', 'huarisuecasulca...', '958075362', '2024-08-19', '2024-12-06', 'Activo')
+#1 {main}
+  thrown in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php on line 26
+[22-Aug-2024 17:26:44 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Practicantes::editar(), 12 passed in /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php on line 21 and exactly 14 expected in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php:26
+Stack trace:
+#0 /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php(21): Practicantes->editar('198', 'Chris Julio Alb...', 'SENATI', '60791391', 'Independencia', 'Desarrollo de S...', 'Remoto', 'huarisuecasulca...', '958075362', '2024-08-19', '2024-12-06', 'Activo')
+#1 {main}
+  thrown in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php on line 26
+[22-Aug-2024 17:28:33 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Practicantes::editar(), 12 passed in /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php on line 21 and exactly 14 expected in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php:26
+Stack trace:
+#0 /home/soluciones/public_html/sistema/soluciones/practica/procesar_edicion_practicante.php(21): Practicantes->editar('198', 'Chris Julio Alb...', 'SENATI', '60791391', 'Independencia', 'Desarrollo de S...', 'Remoto', 'huarisuecasulca...', '958075362', '2024-08-19', '2024-12-06', 'Activo')
+#1 {main}
+  thrown in /home/soluciones/public_html/sistema/soluciones/modelos/practicantes.php on line 26

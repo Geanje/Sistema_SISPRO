@@ -1,0 +1,108 @@
+h1 {
+  color: #333;
+  text-align: center;
+  font-size: 32px;
+}
+
+h2 {
+  color: #777;
+  text-align: center;
+  font-size: 32px;
+}
+
+/* Estilos del contenedor principal */
+.container2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+  text-align: center;
+}
+
+/* Estilos del contenedor de módulos */
+.module-container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 4 columnas en una fila */
+  gap: 70px; /* Espaciado entre modules */
+  padding: 20px;
+  text-align: center;
+}
+
+/* Estilos de los módulos y las imágenes */
+.module {
+  width: 125px;
+  height: 120px;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.module-image {
+  width: 35px;
+  height: 35px; 
+  margin-top: 15px;
+}
+
+.module p {
+  font-size: 14px;
+  margin-top: 6px; 
+  overflow: hidden; 
+}
+
+.module:hover {
+  background-color: #147ca9b3;
+  transform: scale(1.1);
+  color: #fff;
+}
+@media screen and (max-width: 1637px) {
+  .module-container {
+    grid-template-columns: repeat(5, 1fr); /* 3 columnas en una fila */
+    gap: 65px; 
+    text-align: center;
+  }
+  .module-image {
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+  }
+  .module p {
+    font-size: 16px; 
+  }
+  h1,h2{font-size: 29px;}
+}
+
+@media screen and (max-width: 1200px) {
+  .module-container {
+    grid-template-columns: repeat(4, 1fr); /* 3 columnas en una fila */
+    gap: 45px; 
+    text-align: center;
+  }
+  .module-image {
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+  }
+  .module p {
+    font-size: 16px; 
+  }
+  h1,h2{font-size: 29px;}
+}
+
+@media screen and (max-width: 868px) {
+  .module-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en una fila */
+    gap: 40px; 
+  }
+  .module-image {
+    width: 25px;
+    height: 25px;
+    margin-top: 10px;
+  }
+  .module p {
+    font-size: 14px; 
+  }
+  h1,h2{font-size: 26px;}
+}

@@ -1,0 +1,284 @@
+
+  .box {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    background-color: #fff;
+    overflow: auto;
+
+  }
+  #tblpagos{
+    width: 100%;
+    height: 20px;
+  }
+
+  .box-header {
+    background-color: teal;
+    color: white;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    font-weight: bold;
+    color: black;
+  }
+
+  .form-control {
+    background-color: #f9f9f9;
+    border: 1px solid black;
+    border-radius: 4px;
+    color: #555;
+    height: 34px;
+    padding: 6px 12px;
+    transition: border-color 0.3s ease;
+    width: 100%;
+  }
+
+  .form-control:focus {
+    border-color: #6c757d;
+    outline: none;
+  }
+
+
+  /* Radio button styling */
+  .radio-label {
+    display: inline-block;
+    margin-right: 10px;
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+  }
+
+  .radio-label input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .radio-label span {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+  }
+
+  .radio-label span:before {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  .radio-label input:checked ~ span {
+    background-color: #28a745;
+    border-color: #28a745;
+  }
+
+  .radio-label input:checked ~ span:before {
+    display: block;
+  }
+
+  .radio-label span:before {
+    top: 5px;
+    left: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #fff;
+  }
+
+  /* Select styling */
+  select {
+    background: blue;
+    border: 1px solid #99ccff;
+    color: #333;
+    height: 34px;
+    padding: 6px 12px;
+  }
+
+                
+  
+
+table {
+  border-collapse: collapse;
+}
+
+table, th, td {
+border: 1px solid black;
+padding: 5px;
+}
+th {
+font-weight: bold;
+text-align: center;
+}
+
+tr {
+border: 1px solid black;
+}
+
+.ventana-emergente {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5);
+display: none;
+z-index: 9999;
+}
+
+
+#btnguardarpagos,#btnguardarIntegrantes {
+margin-top: 5px;
+margin-left:45%;
+}
+.cerrarVentana {
+position: absolute;
+top: 0;
+right: 0;
+margin-right: 13px;
+margin-top: 7px;
+cursor: pointer;
+}
+
+.contenido-ventana {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+background-color: #fff;
+padding: 20px;
+border-radius: 5px;
+border: 3px solid teal;
+display: flex;
+flex-direction: column;
+}
+
+.titulo-ventana {
+color: #fff;
+background-color: teal;
+padding: 10px;
+margin-bottom: 20px;
+}
+
+@keyframes pulsate {
+0% {
+box-shadow: 0 0 20px rgba(255, 0, 100, 0.5);
+}
+50% {
+box-shadow: 0 0 40px rgba(255, 0, 50, 0.9);
+}
+100% {
+box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+}
+
+}
+
+
+:root {
+  
+  --af: 174.24 59.809% 40.98%;
+
+  
+}
+
+/*@media(prefers-color-scheme: dark) {
+  :root {
+      --af: 174.69 70.335% 32.784%;
+  }
+}
+*/ 
+
+/* Global Variables */
+*,
+:before,
+:after {
+--tw-border-spacing-x: 0;
+--tw-border-spacing-y: 0;
+--tw-translate-x: 0;
+--tw-translate-y: 0;
+--tw-rotate: 0;
+--tw-skew-x: 0;
+--tw-skew-y: 0;
+--tw-scale-x: 1;
+--tw-scale-y: 1;
+/* ... Other variables ... */
+}
+
+/* Utility Classes */
+.h-10 {
+height: 2.5rem !important;
+}
+
+.w-44 {
+width: 11rem !important;
+}
+
+.rounded-xl {
+border-radius: .75rem !important;
+}
+
+.bg-accent-focus {
+--tw-bg-opacity: 1 !important;
+background-color: hsl(var(--af, var(--a)) / var(--tw-bg-opacity)) !important;
+}
+
+.btn-pyramid {
+-webkit-clip-path: polygon(0 0, 100% 0, 97% 100%, 3% 100%);
+clip-path: polygon(0 0, 100% 0, 97% 100%, 3% 100%);
+border: none;
+border-radius: 15px 15px 20px 20px;
+}
+
+/* Reset Default Styles */
+b {
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+vertical-align: baseline;
+}
+
+html, body {
+color: black;
+font-size: 14px;
+line-height: 1.5em;
+-ms-text-size-adjust: 100%;
+-webkit-text-size-adjust: 100%;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+/* Page Styling */
+html {
+background-position: top center;
+background-repeat: no-repeat;
+background-size: contain;
+background-color: #282530;
+-webkit-tap-highlight-color: transparent;
+-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%;
+}
+
+/* Hover Effect */
+.hover\:scale-105:hover {
+--tw-scale-x: 1.05 !important;
+--tw-scale-y: 1.05 !important;
+transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+}
+
+
+

@@ -1,0 +1,178 @@
+
+ .desarrollo {
+  
+  height: 100px;
+  
+}
+
+#AN_progreso_dia,
+#DI_progreso_dia,
+#DE_progreso_dia,
+#IM_progreso_dia,
+#MAN_progreso_dia {
+  position: relative;
+  width: 100%;
+  height: 38px;
+  border-radius: 8px;
+  background: #ccc;
+  margin-bottom: 10px;
+
+}
+/*background: linear-gradient(to right, red 0%, red 33%, white 33%, white 66%, red 66%, red 100%);*/
+/*
+#AN_progreso_dia:hover,
+#DI_progreso_dia:hover,
+#DE_progreso_dia:hover,
+#IM_progreso_dia:hover,
+#MAN_progreso_dia:hover {
+  background: linear-gradient(to right, red 0%, red 33%, white 33%, white 66%, red 66%, red 100%);
+
+}*/
+
+.elegant-background {
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+input[type="date"],
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+
+.dias-element {
+  position: absolute;
+  top: 13px;
+  font-size: 12px;
+  display: flex;
+}
+
+.linea_p {
+    display: inline-block;
+    margin-right: 5px;
+  }
+  
+  #orden_linea {
+    display: inline-block;
+  }
+/* Estilos para la barra de progreso */
+
+
+  /* Form styling */
+  
+  .box {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    background-color: #fff;
+    overflow: auto;
+  }
+  
+  .box-header {
+    background-color: teal;
+    color: white;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    font-weight: bold;
+    color: black;
+  }
+
+  .form-control {
+    background-color: #f9f9f9;
+    border: 1px solid black;
+    border-radius: 4px;
+    color: #555;
+    height: 34px;
+    padding: 6px 12px;
+    transition: border-color 0.3s ease;
+    width: 100%;
+  }
+
+  .form-control:focus {
+    border-color: #6c757d;
+    outline: none;
+  }
+
+  /* Radio button styling */
+  .radio-label {
+    display: inline-block;
+    margin-right: 10px;
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+  }
+
+  .radio-label input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .radio-label span {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+  }
+
+  .radio-label span:before {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  .radio-label input:checked ~ span {
+    background-color: #28a745;
+    border-color: #28a745;
+  }
+
+  .radio-label input:checked ~ span:before {
+    display: block;
+  }
+
+  .radio-label span:before {
+    top: 5px;
+    left: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #fff;
+  }
+
+  /* Select styling */
+  select {
+    background: blue;
+    border: 1px solid #99ccff;
+    color: #333;
+    height: 34px;
+    padding: 6px 12px;
+  }
+ 
+
