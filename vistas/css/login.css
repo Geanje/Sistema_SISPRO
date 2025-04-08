@@ -1,0 +1,211 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color:  #d9e0e4;
+}
+
+/* Estilo de una caja con efecto de gradiente animado */
+.box{
+  position: relative;
+  width: 500px;
+  height: 742px;
+  /*background: #085287*/; 
+  border-radius: 10px;
+  overflow: hidden;
+  color: #ffffff;
+  
+}
+
+/*crean los gradientes que se superponen en las esquinas superiores 
+de la caja, creando un efecto de brillo.*/
+.box::before{
+  content : '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 380px;
+  height: 642px;
+  background: linear-gradient(0deg, transparent, #109EC0,#109EC0);
+  transform-origin: bottom right;
+  animation: animate 7s linear infinite;
+  animation-delay: -3s;  
+  
+}
+
+.box:after{
+  content : '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 380px;
+  height: 642px;
+  background: linear-gradient(0deg, transparent, #109EC0,#109EC0);
+  transform-origin: bottom right;
+  animation: animate 7s linear infinite;
+}
+/*Animate : para hacer que los gradientes roten en sentido horario*/
+@keyframes animate{
+    0%
+    {
+      transform: rotate(0deg);
+    }100%{
+      
+      transform: rotate(360deg);
+    }
+}
+
+
+.form-container{
+  width: 490px;
+  height: 732px;
+  position: relative;
+  inset: 5px;
+  border-radius: 10px;
+  background-image: linear-gradient(-225deg, #109EC0  0%, #109EC0  9%, #0c6bae 67%, #109EC0 120%); 
+  /*color: #d9e0e4;*/
+  z-index: 50;
+  display: flex;
+  flex-direction: column;  
+  padding: 30px 30px;
+}
+
+
+
+.group-material-login{ 
+    position:relative; 
+    margin-bottom:25px; 
+    margin-top: 40px;
+}
+.material-login-control,
+.material-control-login{
+  background-color: #c0dbea14;
+  font-family: 'Arial';
+  font-size:17px;
+  padding:10px 10px 10px 10px;
+  border-radius: 7px;
+  display:block;
+  width:100%;
+  border:none;
+  border-bottom:1px solid ;
+  outline:none;
+}
+.material-login-control:focus{ outline:none; }
+.group-material-login label{
+  color:#f1efeb; 
+  font-size:16px;
+  font-family: 'Arial';
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:all 0.2s ease; 
+  -moz-transition:all 0.2s ease; 
+  -webkit-transition:all 0.2s ease;
+}
+/* Estado activo */
+input.material-login-control:focus:valid ~ label,
+input.material-login-control:valid ~ label{
+  top:-35px;
+  font-size:15px;
+  color:white;
+}
+input.material-login-control:focus:invalid:required,
+input.material-login-control:invalid:required{
+  outline: none;
+  box-shadow: none;
+}
+/*Barra de formularios material desing ================*/
+.bar-login{ position:relative; display:block; width:100%; }
+.bar-login:before, .bar-login:after     {
+  content:'';
+  height:2px; 
+  width:0;
+  bottom:1px; 
+  position:absolute;
+  background:#f4f7f3; 
+  transition:all 0.2s ease; 
+  -moz-transition:all 0.2s ease; 
+  -webkit-transition:all 0.2s ease;
+}
+.bar-login:before { left:50%; }
+.bar-login:after { right:50%; }
+input.material-login-control:focus ~ .bar-login:before, input.material-login-control:focus ~ .bar-login:after {
+  width:50%;
+}
+.btn-login{
+  background-image: linear-gradient(-225deg, #034096 0%, #085287 9%, #109EC0 67%, #79d2f6 120%);
+  box-shadow: 0 0 0 0 rgba(50, 114, 232, 0.5), 0 0 0 0 rgba(39, 200, 255, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  font-family: "Bahnschrift";
+  text-align: center;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 18px;
+  line-height: 19px;
+  color: #edf1f2;
+  padding: 0;
+  outline: none;
+  border: none;
+  width: 70%;
+  height: 50px;
+  margin-left:70px;
+  position: relative;
+   
+}
+.btn-login::after{
+  content: "";
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  top: -150%;
+  left: -15%;
+  background: #13ff13;
+  background-image: linear-gradient(-225deg, #034096 0%, #085287 29%, #109EC0 67%, #79d2f6 100%);
+  z-index: -1;
+  transition: transform 0.5s ease;
+}
+/* Efecto de transformación y sombra en el botón al pasar el cursor por encima */
+.btn-login:hover{
+  transform: translate(0, -6px);
+  box-shadow: 10px -10px 25px 0 rgba(16, 225, 253, 0.363), -10px 10px 25px 0 rgba(27, 96, 224, 0.585);
+}
+/* Efecto de rotación en el fondo después de pasar el cursor por encima del botón */
+.btn-login:hover::after{
+  transform: rotate(150deg);
+}
+/*-----------------------------------------------------------------*/
+
+label{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+}
+.radio-inline label:hover{
+    cursor: pointer;
+}
+select.material-control-login{
+    
+    background: #444F55 url(../assets/icons/SelectMaterialIndicator-white.png) no-repeat scroll right 0.75rem center / 13px 8px;
+}
+select.material-control-login:hover{
+    cursor: pointer;
+}
+
+.swal-text {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.recaptcha-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.g-recaptcha {
+  transform: scale(0.9); /* Cambiar este valor para ajustar el tamaño */
+  border-radius: 5px; 
+}

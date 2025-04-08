@@ -1,0 +1,83 @@
+{
+    "0": {
+        "0": "01-10-2024 12:00 AM",
+        "1": "DEL ANDE  ALIMENTOS S.A.C",
+        "2": "20504107494",
+        "3": "Factura",
+        "4": "F001 - 00000607",
+        "5": "50.00",
+        "6": "<span class=\"label bg-green\">Aceptado<span>"
+    },
+    "1": {
+        "0": "01-10-2024 12:00 AM",
+        "1": "G CELESTE S.A.C.",
+        "2": "20602368140",
+        "3": "Factura",
+        "4": "F001 - 00000608",
+        "5": "177.00",
+        "6": "<span class=\"label bg-green\">Aceptado<span>"
+    },
+    "2": {
+        "0": "01-10-2024 12:00 AM",
+        "1": "CJB SERVICIOS LOGISTICOS INTEGRALES SAC",
+        "2": "20492941400",
+        "3": "Factura",
+        "4": "F001 - 00000609",
+        "5": "177.00",
+        "6": "<span class=\"label bg-green\">Aceptado<span>"
+    },
+    "3": {
+        "0": "01-10-2024 12:00 AM",
+        "1": "EUROFRESH PERU S.A.C",
+        "2": "20492896269",
+        "3": "Factura",
+        "4": "F001 - 00000610",
+        "5": "236.00",
+        "6": "<span class=\"label bg-green\">Aceptado<span>"
+    },
+    "4": {
+        "0": "01-10-2024 12:00 AM",
+        "1": "MUNICIPALIDAD DISTRITAL VEINTISIETE DE NOVIEMBRE",
+        "2": "20205780506",
+        "3": "Factura",
+        "4": "F001 - 00000611",
+        "5": "58.00",
+        "6": "<span class=\"label bg-green\">Aceptado<span>"
+    },
+    "5": {
+        "0": "01-10-2024 12:00 AM",
+        "1": "EMPRESA DE SERVICIOS Y TRANSPORTES EL NEGRO E.I.R.L.",
+        "2": "20507474251",
+        "3": "Factura",
+        "4": "F001 - 00000612",
+        "5": "230.00",
+        "6": "<span class=\"label bg-green\">Aceptado<span>"
+    },
+    "6": {
+        "0": "04-10-2024 12:00 AM",
+        "1": "EMPRESA DE SERVICIOS Y TRANSPORTES EL NEGRO E.I.R.L.",
+        "2": "20507474251",
+        "3": "Factura",
+        "4": "F001 - 00000613",
+        "5": "230.00",
+        "6": "<span class=\"label bg-green\">Aceptado<span>"
+    },
+    "7": {
+        "0": "06-10-2024 12:00 AM",
+        "1": "GLOBAL FUEL SOCIEDAD ANONIMA",
+        "2": "20565643496",
+        "3": "Factura",
+        "4": "F001 - 00000614",
+        "5": 0,
+        "6": "<span class=\"label bg-red\">Anulado<span>"
+    },
+    "8": {
+        "0": "10-10-2024 12:00 AM",
+        "1": "ALRESA SOCIEDAD ANONIMA",
+        "2": "20142953723",
+        "3": "Factura",
+        "4": "F001 - 00000615",
+        "5": "30.00",
+        "6": "<span class=\"label bg-green\">Aceptado<span>"
+    }
+}
