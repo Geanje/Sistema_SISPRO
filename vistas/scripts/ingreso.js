@@ -23,27 +23,36 @@ function init() {
   //cargamos los items al select proveedor
   $.post('../ajax/ingreso.php?op=selectProveedor', function (r) {
     $('#idproveedor').html(r);
+    //-----------------------------------------------------------------------------------
+    // Seleccionar el primer proveedor por defecto
+    var $firstOption = $('#idproveedor option:first');
+    if($firstOption.length > 0) {
+        var firstProviderId = $firstOption.val();
+        $('#idproveedor').val(firstProviderId);
+        $('#idproveedor').data('selected-provider', firstProviderId); // Guardar el ID seleccionado
+    }
+    //-----------------------------------------------------------------------------------
     $('#idproveedor').selectpicker('refresh');
     // ----------------------------------------------------------------------------------
-    // Configuración del autocompletado
-		 var $searchInput = $('.bootstrap-select .dropdown-menu .bs-searchbox input');
+    // Configuración del autocompletado    
+    var $searchInput = $('.bootstrap-select .dropdown-menu .bs-searchbox input');
     
-		 $searchInput.on('input', function() {
-			 var searchText = $(this).val().toLowerCase();
-			 var $select = $('#idproveedor');
-			 var $options = $select.find('option');
-			 
-			 var $visibleOptions = $options.filter(function() {
-				 return $(this).text().toLowerCase().includes(searchText);
-			 });
-	 
-			 if ($visibleOptions.length === 1) {
-				 var selectedValue = $visibleOptions.first().val();
-				 $select.val(selectedValue);
-				 $select.selectpicker('refresh');
-				 $select.trigger('change');
-			 }
-		 });
+    $searchInput.on('input', function() {
+        var searchText = $(this).val().toLowerCase();
+        var $select = $('#idproveedor');
+        var $options = $select.find('option');
+        
+        var $visibleOptions = $options.filter(function() {
+            return $(this).text().toLowerCase().includes(searchText);
+        });
+
+        if ($visibleOptions.length === 1) {
+            var selectedValue = $visibleOptions.first().val();
+            $select.val(selectedValue);
+            $select.data('selected-provider', selectedValue); // Guardar el ID seleccionado
+            $select.selectpicker('refresh');
+        }
+    });
      // ----------------------------------------------------------------------------------
   });
   $('#cuota').change(calcularcuotas);
@@ -380,7 +389,24 @@ function listarArticulos() {
 function guardaryeditar(e) {
   e.preventDefault(); //No se activará la acción predeterminada del evento
   //$("#btnGuardar").prop("disabled",true);
+  //--------------------------------------------------------------
+  // Validar que haya un proveedor seleccionado
+  var idproveedor = $('#idproveedor').val() || $('#idproveedor').data('selected-provider');
+    
+    if (!idproveedor) {
+        swal({
+            title: 'Error!',
+            text: 'Debe seleccionar un proveedor',
+            type: 'error',
+            confirmButtonText: 'Ok'
+        });
+        return false;
+    }
+  //--------------------------------------------------------------
+
   var formData = new FormData($('#formulario')[0]);
+  // -------------------------------------------------------------
+  formData.set('idproveedor', idproveedor);
 
   $.ajax({
     url: '../ajax/ingreso.php?op=guardaryeditar',
