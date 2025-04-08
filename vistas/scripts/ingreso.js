@@ -511,37 +511,50 @@ function guardaryeditarListaCuota(e) {
 }
 
 function mostrar(idingreso) {
-  $.post(
-    '../ajax/ingreso.php?op=mostrar',
-    { idingreso: idingreso },
-    function (data, status) {
+  $.post('../ajax/ingreso.php?op=mostrar', { idingreso }, function (data) {
+    try {
       data = JSON.parse(data);
       mostrarform(true);
-      if (data.estado == 'Aceptado') {
-        $('#credito').val('no');
-      } else if (data.estado == 'Pendiente') {
-        $('#credito').val('si');
-      }
-      $('#idproveedor').val(data.idproveedor);
-      $('#idproveedor').selectpicker('refresh');
-      $('#tipo_comprobante').val(data.tipo_comprobante);
-      $('#tipo_comprobante').selectpicker('refresh');
-      $('#serie_comprobante').val(data.serie_comprobante);
-      $('#num_comprobante').val(data.num_comprobante);
-      $('#fecha_hora').val(data.fecha);
+
+      // Establecer los valores sin refrescar selects
+      $('#idproveedor').val(data.idproveedor).prop('disabled', true);
+      $('#tipo_comprobante').val(data.tipo_comprobante).prop('disabled', true);
+      $('#serie_comprobante').val(data.serie_comprobante).prop('readonly', true);
+      $('#num_comprobante').val(data.num_comprobante).prop('readonly', true);
+      $('#fecha_hora').val(data.fecha).prop('readonly', true);
+      $('#credito').val(data.estado === 'Pendiente' ? 'si' : 'no').prop('disabled', true);
       $('#impuesto').val(data.impuesto);
       $('#idingreso').val(data.idingreso);
 
-      //Ocultar y mostrar los botones
+      // Mostrar u ocultar sección crédito
+      if (data.estado === 'Pendiente') {
+        $('#escredito').show();
+      } else {
+        $('#escredito').hide();
+      }
+
+      // Botones
       $('#btnGuardar').hide();
       $('#btnCancelar').show();
-
       $('#btnAgregarArt').hide();
-    }
-  );
 
+      // Cargar detalle solo después de que se muestre el formulario correctamente
+      cargarDetalle(idingreso);
+
+    } catch (error) {
+      console.error('Error al procesar los datos del ingreso:', error);
+      alert('Ocurrió un error al mostrar los datos del ingreso.');
+    }
+  }).fail(function () {
+    alert('No se pudo obtener los datos del ingreso.');
+  });
+}
+
+function cargarDetalle(idingreso) {
   $.post('../ajax/ingreso.php?op=listarDetalle&id=' + idingreso, function (r) {
     $('#detalles').html(r);
+  }).fail(function () {
+    $('#detalles').html('<tr><td colspan="6">No se pudo cargar el detalle de productos.</td></tr>');
   });
 }
 
