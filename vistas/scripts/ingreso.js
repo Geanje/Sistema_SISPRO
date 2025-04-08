@@ -407,6 +407,7 @@ function guardaryeditar(e) {
   var formData = new FormData($('#formulario')[0]);
   // -------------------------------------------------------------
   formData.set('idproveedor', idproveedor);
+  // -------------------------------------------------------------
 
   $.ajax({
     url: '../ajax/ingreso.php?op=guardaryeditar',
