@@ -29,7 +29,7 @@ function init() {
     if($firstOption.length > 0) {
         var firstProviderId = $firstOption.val();
         $('#idproveedor').val(firstProviderId);
-        $('#idproveedor').data('selected-provider', firstProviderId); // Guardar el ID seleccionado
+        $('#idproveedor').data('selected-provider', firstProviderId); // Guardar el ID seleccionado del autocompletado
     }
     //-----------------------------------------------------------------------------------
     $('#idproveedor').selectpicker('refresh');
