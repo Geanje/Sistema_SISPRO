@@ -416,17 +416,29 @@ function guardaryeditar(e) {
     contentType: false,
     processData: false,
 
-    success: function (datos) {
-      if (datos != '' || datos != null || datos != ' ') {
+    success: function (rspta) {
+      rspta = rspta.trim(); // Asegurarse que no tenga espacios al inicio o final
+
+      if (rspta === "Debes primero agregar al menos un artículo") {
+        swal({
+          title: 'Error',
+          text: rspta,
+          type: 'error',
+          confirmButtonText: 'Cerrar',
+          closeOnConfirm: true
+        });
+        return;
+      }
+
+      if (rspta !== '') {
         swal(
           {
-            title: 'BIEN!',
-            text: '¡' + datos + '!',
+            title: '¡Bien!',
+            text: rspta,
             type: 'success',
             confirmButtonText: 'Cerrar',
-            closeOnConfirm: true,
+            closeOnConfirm: true
           },
-
           function (isConfirm) {
             if (isConfirm) {
               mostrarform(false);
@@ -435,15 +447,14 @@ function guardaryeditar(e) {
           }
         );
       } else {
-        swal(
+        swal.fire(
           {
             title: 'Error!',
-            text: '¡Ocurrio un error, por favor registre nuevamente la compra!',
+            text: '¡Ocurrió un error, por favor registre nuevamente la compra!',
             type: 'warning',
             confirmButtonText: 'Cerrar',
-            closeOnConfirm: true,
+            closeOnConfirm: true
           },
-
           function (isConfirm) {
             if (isConfirm) {
               location.reload(true);
@@ -451,8 +462,9 @@ function guardaryeditar(e) {
           }
         );
       }
-    },
+    }
   });
+
   limpiar();
 }
 
