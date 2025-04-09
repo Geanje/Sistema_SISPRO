@@ -36,7 +36,10 @@ switch ($_GET["op"])
     case 'guardaryeditar':
       if(empty($idingreso))
       {
-
+          if (!isset($_POST["idarticulo"]) || count($_POST["idarticulo"]) == 0) {
+          echo "Debes primero agregar al menos un artículo";
+          break;
+        }
         if(isset($_POST["fechasElegidas"])){
             $rspta=$ingreso->insertar($idproveedor,$idusuario,$tipo_comprobante,$serie_comprobante,$num_comprobante,$fecha_hora,$impuesto,$total_compra,$_POST["idarticulo"],$_POST["cantidad"],$_POST["precio_compra"],$_POST["precio_venta"],$credito,$cuota,$valorcuota,$tipocredito,$fechainicio,$diapago,$_POST["fechasElegidas"],$_POST["serieIngreso"],$_POST["codigod"]);
 
