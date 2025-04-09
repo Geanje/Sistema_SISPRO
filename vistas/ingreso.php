@@ -107,7 +107,7 @@ if($_SESSION['compras']==1)
 
                       <div class="form-group col-lg-2 col-md-2 col-sm-6 col-xs-12">
                         <label>Serie:</label>
-                        <input type="text" class="form-control" name="serie_comprobante" id="serie_comprobante" maxlength="7" placeholder="Serie">
+                        <input type="text" class="form-control" name="serie_comprobante" id="serie_comprobante" maxlength="7" placeholder="Serie" required>
                       </div>
 
                       <div class="form-group col-lg-2 col-md-2 col-sm-6 col-xs-12">
