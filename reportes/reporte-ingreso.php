@@ -224,20 +224,11 @@ setlocale(LC_TIME, 'spanish');
 				$total += $subtotal;
 				?>
 				<tr class="productos" style="width: 100%; text-align: center;">
-					<th style="width: 10%; text-align:center; border: solid 0.3px #000;"><?php echo $reg_det->codigo; ?>
-					</th>
-					<td style="width: 55%; text-align:left; border: solid 0.3px #000;">
-						<?php echo $reg_det->nombre . ' - ' . $reg_det->serie; ?>
-					</td>
-					<td style="width: 10%; height: 15px; text-align:center; border: solid 0.3px #000;">
-						<?php echo $reg_det->cantidad; ?>
-					</td>
-					<td style="width: 13%; text-align: center; border: solid 0.3px #000;">
-						<?php echo $reg_det->precio_compra; ?>
-					</td>
-					<td style="width: 13%; text-align: center; border: solid 0.3px #000;">
-						<?php echo number_format($subtotal, 2, '.', ','); ?>
-					</td>
+					<th style="width: 10%; text-align:center; border: solid 0.3px #000;"><?php echo $reg_det->codigo; ?></th>
+					<td style="width: 55%; text-align:left; border: solid 0.3px #000;"><?php echo $reg_det->nombre . ' - ' . $reg_det->serie; ?></td>
+					<td style="width: 10%; height: 15px; text-align:center; border: solid 0.3px #000;"><?php echo $reg_det->cantidad; ?></td>
+					<td style="width: 13%; text-align: center; border: solid 0.3px #000;"><?php echo $reg_det->precio_compra; ?></td>
+					<td style="width: 13%; text-align: center; border: solid 0.3px #000;"><?php echo number_format($subtotal, 2, '.', ','); ?></td>
 				</tr>
 			<?php } ?>
 		</table>
@@ -247,13 +238,13 @@ setlocale(LC_TIME, 'spanish');
 		<table style="border: solid 0.3px #000; width: 100%;">
 			<tr class="productos" style="width: 100%; text-align: center;">
 				<!-- Columna 1: Total a Pagar -->
-				<td colspan="4" style="width: 88%; text-align: right; border: solid 0.3px #000;">
+				<td style="width: 88%; text-align: left; border: none;">
 					<strong>Total a Pagar:</strong>
 				</td>
 
 				<!-- Columna 2: Monto total -->
-				<td style="width: 12%; text-align: center; border: solid 0.3px #000;">
-					<strong><?php echo number_format($total, 2, '.', ','); ?></strong>
+				<td style="width: 13%; text-align: center; border: none;">
+					<strong> S/. <?php echo number_format($total, 2, '.', ','); ?></strong>
 				</td>
 			</tr>
 		</table>
