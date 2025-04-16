@@ -7,35 +7,78 @@ Class Ingreso
 {
   //Implementando nuestro constructor
   public function __construct()
-  {
- 
- 
+  { 
   }
   //Implementamos metodo para insertar registro
-    public function insertar($idproveedor,$idusuario,$tipo_comprobante,$serie_comprobante,$num_comprobante,$fecha_hora,$impuesto,$total_compra,$idarticulo,$cantidad,$precio_compra,$precio_venta,$credito,$cuota,$valorcuota,$tipocredito,$fechainicio,$diapago,$fechasElegidas,$serieIngreso,$codigod)
-    {
-
-      if($credito =="si"){
-        $estado = "Pendiente";
-      }else{
-        $estado = "Aceptado";
-        $cuota =0;
-        $valorcuota = 0.00;
-
+  public function insertar($idproveedor, $idusuario, $tipo_comprobante, $serie_comprobante = null, $num_comprobante = null, $fecha_hora, $impuesto, $total_compra, $idarticulo, $cantidad, $precio_compra, $precio_venta, $credito, $cuota, $valorcuota, $tipocredito, $fechainicio, $diapago, $fechasElegidas, $serieIngreso, $codigod)
+  {
+      // Lógica para determinar estado según crédito
+      if($credito == "si"){
+          $estado = "Pendiente";
+      } else {
+          $estado = "Aceptado";
+          $cuota = 0;
+          $valorcuota = 0.00;
       }
+  
+      // Generación automática de serie y número si no se proporcionan
+      if(empty($serie_comprobante) || empty($num_comprobante)) {
+        $prefijo = ($tipo_comprobante == 'Factura') ? 'F' : 'B'; // 01=Factura, otro=Boleta
 
-      $sql="INSERT INTO ingreso (idproveedor,idusuario,tipo_comprobante,serie_comprobante,num_comprobante,fecha_hora,impuesto,num_cuotas,valor_cuota,total_compra,estado)
-      VALUES ('$idproveedor','$idusuario','$tipo_comprobante','$serie_comprobante','$num_comprobante','$fecha_hora','$impuesto','$cuota','$valorcuota','$total_compra','$estado')";
-      //return ejecutarConsulta($sql);
-      $idingresonew=ejecutarConsulta_retornarID($sql);
-      $num_elementos=0;
-      $sw=true;
-
-      while($num_elementos < count($idarticulo) )
-      {
-        $sql_detalle="INSERT INTO detalle_ingreso(idingreso,idarticulo,cantidad,precio_compra,precio_venta,serie,codigo) VALUES('$idingresonew','$idarticulo[$num_elementos]','$cantidad[$num_elementos]','$precio_compra[$num_elementos]','$precio_venta[$num_elementos]','$serieIngreso[$num_elementos]','$codigod[$num_elementos]')";
-        ejecutarConsulta($sql_detalle) or $sw=false;
-        $num_elementos=$num_elementos+1;
+        // 1. Buscar la última serie válida para este tipo de comprobante
+        $sql_ultima_serie = "SELECT MAX(serie_comprobante) as ultima_serie 
+                            FROM ingreso 
+                            WHERE tipo_comprobante = '$tipo_comprobante' 
+                            AND serie_comprobante REGEXP '^{$prefijo}[0-9]{3}$'";
+        $resultado_serie = ejecutarConsultaSimpleFila($sql_ultima_serie);
+        $ultima_serie = $resultado_serie["ultima_serie"];
+        
+        if(empty($ultima_serie)) {
+            // No hay series válidas, crear nueva
+            $serie_comprobante = $prefijo . '001';
+            $num_comprobante = '00000001';
+        } else {
+            // 2. Buscar el último número válido para esta serie
+            $sql_ultimo_numero = "SELECT MAX(num_comprobante) as ultimo_numero 
+                                FROM ingreso 
+                                WHERE tipo_comprobante = '$tipo_comprobante' 
+                                AND serie_comprobante = '$ultima_serie'
+                                AND num_comprobante REGEXP '^[0-9]{8}$'";
+            $resultado_numero = ejecutarConsultaSimpleFila($sql_ultimo_numero);
+            $ultimo_numero = $resultado_numero["ultimo_numero"];
+            
+            if(empty($ultimo_numero)) {
+                // Hay serie pero no números válidos, empezar desde 00000001
+                $serie_comprobante = $ultima_serie;
+                $num_comprobante = '00000001';
+            } elseif($ultimo_numero == '99999999') {
+                // Llegamos al límite, incrementar serie
+                $numero_serie = (int)substr($ultima_serie, 1) + 1;
+                $serie_comprobante = $prefijo . str_pad($numero_serie, 3, "0", STR_PAD_LEFT);
+                $num_comprobante = '00000001';
+            } else {
+                // Incrementar número normalmente
+                $serie_comprobante = $ultima_serie;
+                $nuevo_numero = (int)$ultimo_numero + 1;
+                $num_comprobante = str_pad($nuevo_numero, 8, "0", STR_PAD_LEFT);
+            }
+        }
+    }
+  
+      // Insertar el ingreso principal
+      $sql = "INSERT INTO ingreso (idproveedor, idusuario, tipo_comprobante, serie_comprobante, num_comprobante, fecha_hora, impuesto, num_cuotas, valor_cuota, total_compra, estado)
+              VALUES ('$idproveedor', '$idusuario', '$tipo_comprobante', '$serie_comprobante', '$num_comprobante', '$fecha_hora', '$impuesto', '$cuota', '$valorcuota', '$total_compra', '$estado')";
+      
+      $idingresonew = ejecutarConsulta_retornarID($sql);
+      $num_elementos = 0;
+      $sw = true;
+  
+      // Insertar los detalles del ingreso
+      while($num_elementos < count($idarticulo)) {
+          $sql_detalle = "INSERT INTO detalle_ingreso(idingreso, idarticulo, cantidad, precio_compra, precio_venta, serie, codigo) 
+                          VALUES('$idingresonew', '$idarticulo[$num_elementos]', '$cantidad[$num_elementos]', '$precio_compra[$num_elementos]', '$precio_venta[$num_elementos]', '$serieIngreso[$num_elementos]', '$codigod[$num_elementos]')";
+          ejecutarConsulta($sql_detalle) or $sw = false;
+          $num_elementos = $num_elementos + 1;
       }
 
             // list($anno,$mes,$dia) = explode('-',$fechainicio);

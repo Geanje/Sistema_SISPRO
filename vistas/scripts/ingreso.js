@@ -658,30 +658,13 @@ function agregarDetalle(idarticulo, articulo, codigo) {
   var precio_compra = 1;
   var precio_venta = 1;
 
-  // Obtener el valor de la serie del comprobante del formulario principal
-  var serie_comprobante = $('#serie_comprobante').val();
-	
-	$(document).ready(function() {
-		// Actualizar series cuando cambie el campo principal
-		$('#serie_comprobante').change(function() {
-			var nuevaSerie = $(this).val();
-			
-			// Actualizar todos los inputs hidden
-			$('.serie-input').val(nuevaSerie);
-			
-			// Actualizar todos los textos mostrados
-			$('.serie-text').text(nuevaSerie);
-		});
-	});
-
   if (idarticulo != '') {
     var subtotal = cantidad * precio_compra;
     var fila='<tr class="filas" id="fila' + cont + '">'+
 		'<td><button type="button" class="btn btn-danger" onclick="eliminarDetalle(' + cont + ')">X</button></td>'+
 		'<td><input type="hidden" name="codigod[]" id="codigod' + cont + '" value="'+codigo+'" class="form-control">'+codigo+'</td>'+
 		'<td><input type="hidden" name="idarticulo[]" value="'+idarticulo+'">'+articulo+'</td>'+
-		// Campo serieIngreso con el valor de serie_comprobante
-		'<td><input type="hidden" name="serieIngreso[]" class="serie-input" value="' + serie_comprobante + '">' + '<span class="serie-text">' + serie_comprobante + '</span></td>' +
+		'<td><input type="text" name="serieIngreso[]" id="serieIngreso'+cont+'" class="form-control"></td>'+
 		'<td><input type="number" name="cantidad[]" id="cantidad' + cont + '" value="' + cantidad + '" min=1 class="form-control"></td>'+
 		'<td><input type="number" step="0.1" name="precio_compra[]" id="precio_compra' + cont + '" min=0.1 value="' + precio_compra + '" class="form-control"></td>'+
 		'<td>'+
