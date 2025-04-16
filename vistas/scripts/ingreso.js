@@ -564,6 +564,28 @@ function mostrar(idingreso) {
   });
 }
 
+// ------------------------------------------------------------------------------------------
+// Evento de cancelar
+$('#btnCancelar').click(function () {
+  // Aquí se habilita todos los campos cuando se cancela
+  $('#idproveedor').prop('disabled', false);  // Habilitar
+  $('#tipo_comprobante').prop('disabled', false);  // Habilitar
+  $('#serie_comprobante').prop('readonly', false);  // Habilitar
+  $('#num_comprobante').prop('readonly', false);  // Habilitar
+  $('#fecha_hora').prop('readonly', false);  // Habilitar
+  $('#credito').prop('disabled', false);  // Habilitar
+  $('#impuesto').prop('readonly', false);  // Habilitar
+  $('#idingreso').prop('readonly', false);  // Habilitar
+
+  // Mostrar los botones adecuados para "agregar"
+  $('#btnGuardar').show();  // Mostrar guardar
+  $('#btnCancelar').hide();  // Ocultar cancelar
+  $('#btnAgregarArt').show();  // Mostrar agregar artículo
+
+  mostrarform(false);  // Ocultar el formulario
+});
+// -------------------------------------------------------------------------------------------
+
 function cargarDetalle(idingreso) {
   $.post('../ajax/ingreso.php?op=listarDetalle&id=' + idingreso, function (r) {
     if (r && r.trim() !== '') {
