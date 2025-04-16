@@ -94,38 +94,56 @@ switch ($_GET["op"])
     break;
 
     case 'listarDetalle':
-      //RECIBIMOS ID Ingreso
-      $id=$_GET['id'];
-      $rspta=$ingreso->listarDetalle($id);
-      $total=0;
+      // RECIBIMOS ID de Ingreso
+      $id = $_GET['id'];
+      $rspta = $ingreso->listarDetalle($id);
+      $total = 0;
+      
+      // Encabezado con 9 columnas
       echo '<thead style="background-color:#A9D0F5">
-          <th>Opciones</th>
-          <th>Articulo</th>
-          <th>Cantidad</th>
-          <th>Precio compra</th>
-          <th></th>
-          <th>Precio venta</th>
-          <th>Subtotal</th>
-
-        </thead>';
-
-
-      while ($reg = $rspta->fetch_object())
-  				{
-  					echo '<tr class="filas"><td></td><td>'.$reg->nombre.'</td><td>'.$reg->cantidad.'</td><td>'.$reg->precio_compra.'</td><td></td><td>'.$reg->precio_venta.'</td><td>'.$reg->precio_compra*$reg->cantidad.'</td></tr>';
-            $total=$total+($reg->precio_compra*$reg->cantidad);
+              <tr>
+                <th>Opciones</th>
+                <th>Codigo</th>
+                <th>Articulo</th>
+                <th>Serie</th>
+                <th>Cantidad</th>
+                <th>Precio compra</th>
+                <th>%</th>
+                <th>Precio venta</th>
+                <th>Subtotal</th>
+              </tr>
+            </thead>';
+      
+      // Cuerpo de la tabla
+      echo '<tbody>';
+      while ($reg = $rspta->fetch_object()) {
+        // Si alguno de estos campos no existe en $reg, ajusta el nombre o deja la celda en blanco.
+        echo '<tr class="filas">
+                <td><!-- Opciones: según convenga, aquí podrías agregar botones o dejarlo vacío --></td>
+                <td>' . (isset($reg->codigo) ? $reg->codigo : '') . '</td>
+                <td>' . $reg->nombre . '</td>
+                <td>' . (isset($reg->serie) ? $reg->serie : '') . '</td>
+                <td>' . $reg->cantidad . '</td>
+                <td>' . $reg->precio_compra . '</td>
+                <td>' . (isset($reg->porcentaje) ? $reg->porcentaje . '%' : '') . '</td>
+                <td>' . $reg->precio_venta . '</td>
+                <td>' . ($reg->cantidad * $reg->precio_compra) . '</td>
+              </tr>';
+        $total += ($reg->cantidad * $reg->precio_compra);
       }
-
+      echo '</tbody>';
+      
+      // Pie de tabla con 9 columnas (se agrupan las celdas vacías)
       echo '<tfoot>
-        <th>TOTAL</th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th><h4 id="total">S/.'.$total.'</h4><input type="hidden" name="total_compra" id="total_compra"></th>
-      </tfoot>';
-     
+              <tr>
+                <th>TOTAL</th>
+                <th colspan="7"></th>
+                <th>
+                  <h4 id="total">S/. ' . $total . '</h4>
+                  <input type="hidden" name="total_compra" id="total_compra">
+                </th>
+              </tr>
+            </tfoot>';
     break;
 
 
