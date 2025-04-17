@@ -220,6 +220,13 @@ function mostrarform(flag) {
 
     $('#credito').val('no');
     $('#escredito').hide();
+
+    //---------------------------------------------------
+     // limpia los campos para que no afecte a otros formularios
+     $('#idingreso').val('');  //limpia el campo oculto
+     $('#detalles tbody').html('');  //limpia la tabla de productos
+     detalles = 0;  // reinicia los detalles
+    //---------------------------------------------------
   }
 }
 
@@ -462,7 +469,7 @@ function guardaryeditar(e) {
           }
         );
       } else {
-        swal.fire(
+        swal(
           {
             title: 'Error!',
             text: '¡Ocurrió un error, por favor registre nuevamente la compra!',
