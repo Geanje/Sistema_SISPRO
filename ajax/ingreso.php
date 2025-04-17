@@ -145,6 +145,7 @@ switch ($_GET["op"])
               </tr>
             </tfoot>';
     break;
+    /**---- */
 
 
 /*    case 'listar':
