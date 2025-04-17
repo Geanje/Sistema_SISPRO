@@ -25,7 +25,7 @@ function init() {
     $('#idproveedor').html(r);
     //-----------------------------------------------------------------------------------
     // Seleccionar el primer proveedor por defecto
-    var $firstOption = $('#idproveedor option:first');
+    var $firstOption = $('#idproveedor').html('<option value="" disabled selected>Seleccione proveedor</option>' + r);
     if($firstOption.length > 0) {
         var firstProviderId = $firstOption.val();
         $('#idproveedor').val(firstProviderId);
@@ -154,27 +154,41 @@ function agregarFechas(cantCuotas, valorCuotas) {
 
 //Función limpiar
 function limpiar() {
-  $('#idproveedor').val('');
-  $('#proveedor').val('');
+  // Limpiar y resetear el select de proveedor
+  $('#idproveedor').val('').prop('disabled', false).selectpicker('refresh');
+  $('#proveedor').val(''); // si este campo extra se usa
+
+  // Restablecer campos del comprobante
   $('#serie_comprobante').val('');
   $('#num_comprobante').val('');
-  $('#fecha_hora').val('');
-  $('#impuesto').val('0');
 
-  $('#total_compra').val('');
-  $('.filas').remove();
-  $('#total').html('0');
-
-  //Obtenemos la fecha actual
+  // Restablecer fecha actual
   var now = new Date();
   var day = ('0' + now.getDate()).slice(-2);
   var month = ('0' + (now.getMonth() + 1)).slice(-2);
   var today = now.getFullYear() + '-' + month + '-' + day;
-  $('#fecha_hora').val(today);
+  $('#fecha_hora').val(today).prop('readonly', false);
 
-  //Marcamos el primer tipo_documento
-  $('#tipo_comprobante').val('Boleta');
+  // Restablecer valores numéricos
+  $('#impuesto').val('0');
+  $('#total_compra').val('');
+  $('#total').html('0');
+
+  // Resetear tipo de comprobante
+  $('#tipo_comprobante').val('Boleta').prop('disabled', false);
   $('#tipo_comprobante').selectpicker('refresh');
+
+  // Resetear crédito
+  $('#credito').val('no').prop('disabled', false);
+  $('#escredito').hide();
+
+  // Limpiar detalles de la tabla de artículos
+  $('.filas').remove();
+
+  // Resetear botones
+  $('#btnGuardar').show();
+  $('#btnAgregarArt').show();
+  $('#btnCancelar').hide();
 }
 
 //Función mostrar formulario
@@ -398,7 +412,8 @@ function guardaryeditar(e) {
             title: 'Error!',
             text: 'Debe seleccionar un proveedor',
             type: 'error',
-            confirmButtonText: 'Ok'
+            timer: 3000, // 3 segundos
+            showConfirmButton: false
         });
         return false;
     }
@@ -528,8 +543,15 @@ function mostrar(idingreso) {
       data = JSON.parse(data);
       mostrarform(true);
 
-      // Establecer los valores sin refrescar selects
-      $('#idproveedor').val(data.idproveedor).prop('disabled', true);
+      // Esperamos a que el select del proveedor esté cargado
+      $.post('../ajax/ingreso.php?op=selectProveedor', function (r) {
+        $('#idproveedor').html('<option value="" disabled>Seleccione proveedor</option>' + r);
+
+        // Aseguramos que la opción registrada esté seleccionada
+        $('#idproveedor').val(data.idproveedor).prop('disabled', true);
+        $('#idproveedor').selectpicker('refresh');
+      });
+
       $('#tipo_comprobante').val(data.tipo_comprobante).prop('disabled', true);
       $('#serie_comprobante').val(data.serie_comprobante).prop('readonly', true);
       $('#num_comprobante').val(data.num_comprobante).prop('readonly', true);
@@ -538,22 +560,19 @@ function mostrar(idingreso) {
       $('#impuesto').val(data.impuesto);
       $('#idingreso').val(data.idingreso);
 
-      // Mostrar u ocultar sección crédito
       if (data.estado === 'Pendiente') {
         $('#escredito').show();
       } else {
         $('#escredito').hide();
       }
 
-      // Botones
       $('#btnGuardar').hide();
       $('#btnCancelar').show();
       $('#btnAgregarArt').hide();
 
-      // Solución: esperar un poco antes de cargar los detalles
       setTimeout(() => {
         cargarDetalle(idingreso);
-      }, 0); // puedes ajustar el tiempo si es necesario
+      }, 0);
 
     } catch (error) {
       console.error('Error al procesar los datos del ingreso:', error);
