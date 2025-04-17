@@ -446,8 +446,8 @@ function guardaryeditar(e) {
           title: 'Error',
           text: rspta,
           type: 'error',
-          confirmButtonText: 'Cerrar',
-          closeOnConfirm: true
+          timer: 1000, // 1 segundo
+          showConfirmButton: false
         });
         return;
       }
@@ -487,7 +487,7 @@ function guardaryeditar(e) {
     }
   });
 
-  limpiar();
+ // limpiar();
 }
 
 function guardaryeditarListaCuota(e) {
@@ -705,6 +705,34 @@ function agregarDetalle(idarticulo, articulo, codigo) {
   var cantidad = 1;
   var precio_compra = 1;
   var precio_venta = 1;
+
+
+  //agregado
+  //variable para verificar si el articulo ya fue agregado 
+  //se selecciona todos los campós de input q tengan el nombre de idarticulo y recorre los input selccionados 
+  // si coinciden con el idarticulo marca la variable como verdadero 
+  var existe = false;
+  $('input[name="idarticulo[]"').each(function(){
+    if ($(this).val() == idarticulo){
+      existe = true;
+    }
+  });
+
+  if (existe) {
+    swal({
+      title: '¡Error!',
+      text: '¡El articulo ya fue agregado!',
+      type: 'warning',
+      timer: 1000, // 1 segundo
+      showConfirmButton: false
+    });
+    return;
+  }
+
+
+  // Obtener el valor de la serie del comprobante del formulario principal
+  var serie_comprobante = $('#serie_comprobante').val();
+
 
   if (idarticulo != '') {
     var subtotal = cantidad * precio_compra;
