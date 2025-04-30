@@ -284,15 +284,15 @@ function guardaryeditar(e) {
 						title: "BIEN!",
 						text: "¡" + datos + "!",
 						type: "success",
-						confirmButtonText: "Cerrar",
-						closeOnConfirm: true
-					},
-						function (isConfirm) {
-							if (isConfirm) {
-								mostrarform(false);
-								listar();
-							}
-						});
+						timer: 1000, // 1 segundo
+						showConfirmButton: false // No mostrar botón porque se cerrará solo
+					});
+			
+					setTimeout(function () {
+						mostrarform(false);
+						listarCuotas(id_ingreso);
+						$("#modalListadoCuotas").modal('hide');
+					}, 1000);
 				} else {
 					location.reload(true);
 				}

@@ -241,6 +241,21 @@ function guardaryeditar(e)
 	//$("#btnGuardar").prop("disabled",true);
 	var formData = new FormData($("#formulario")[0]);
 
+		// Validar que Debes insertar una Validez de la Oferta
+		var validez = $('#validez').val() || $('#validez').data('validez');
+    
+		if (!validez) {
+			swal({
+				title: 'Error!',
+				text: 'Debes insertar una Validez de Oferta',
+				type: 'error',
+				timer: 1000, // 1 segundo
+				showConfirmButton: false
+			});
+			return false;
+		}
+		//---------------------------------------------------------------------
+	
 	$.ajax({
 		url: "../ajax/proforma.php?op=guardaryeditar",
 	    type: "POST",
@@ -258,19 +273,15 @@ function guardaryeditar(e)
 				  title: "BIEN!",
 				  text: "¡"+datos+"!",
 				  type:"success",
-				  confirmButtonText: "Cerrar",
-				  closeOnConfirm: true
-				},
-
-				function(isConfirm){
-
-					if(isConfirm){
-						// history.back();
-						mostrarform(false);
-		          		listar();
-						//console.log("Llamando a la funcion listar en guardaryeditar")
-					}
-				});
+				  timer: 1000, // 1 segundo
+				  showConfirmButton: false // No mostrar botón porque se cerrará solo
+			  });
+	  
+			  setTimeout(function () {
+				  mostrarform(false);
+				  listarCuotas(id_ingreso);
+				  $("#modalListadoCuotas").modal('hide');
+			  }, 1000); // Espera el mismo tiempo que el timer para ejecutar
 
 	        }else{
 	        	swal({

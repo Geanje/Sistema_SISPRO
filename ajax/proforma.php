@@ -37,10 +37,21 @@ $igv_asig=isset($_POST["igv_asig"])? limpiarCadena($_POST["igv_asig"]):"";
 switch ($_GET["op"]){
 	case 'guardaryeditar':
 		if (empty($idproforma)){
+			// Arranca buffer si no existe
+			if (!ob_get_level()) {
+				ob_start();
+			}
 			$rspta=$proforma->insertar($idusuario,$idcliente,$correlativo,$fecha_hora,$validez,$tiempoEntrega,$_POST["idarticulo"],$_POST["cantidad"],$_POST["precio_venta"],$_POST["serieProforma"],$total_venta,$igv_total,$igv_asig);
-			echo $rspta ? "¡Ha registrado la Proforma exitosamente" : "No se pudieron registrar todos los datos de la Proforma";
-		}
-		else {
+			// Limpia cualquier salida previa
+			ob_clean();
+	
+			// Solo enviamos el mensaje
+			if (($rspta)) {
+				echo "¡Ha registrado la Proforma exitosamente!";
+			} else {
+				echo "No se pudieron registrar todos los datos de la Proforma";
+			}
+		}else {
 		}
 	break;
 

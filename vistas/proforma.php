@@ -99,7 +99,7 @@ if ($_SESSION['ventas']==1)
                           </div> 
                           <div class="form-group col-lg-2 col-md-7 col-sm-7 col-xs-8">
                            <label>Validez de la Oferta</label>                           
-                            <input type="text" class="form-control" name="validez" id="validez" required maxlength="50">
+                            <input type="text" class="form-control" name="validez" id="validez" maxlength="50">
                            </div> 
                            
                            <div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-12">
