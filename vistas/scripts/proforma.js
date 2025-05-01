@@ -406,8 +406,28 @@ function agregarDetalle(idarticulo,articulo,unidad_medida,precio_venta,afectacio
   	// }
 	  	var cantidad=1;
 	    var descuento=0;
+		//agregado aqui
+		var existe = false;
     if (idarticulo!="")
     {
+		//agregado 
+		$('input[name="idarticulo[]"]').each(function(){
+            if ($(this).val() == idarticulo){
+              existe = true;
+            }
+          });
+        
+          if (existe) {
+            swal({
+              title: '¡Error!',
+              text: '¡El articulo ya fue agregado!',
+              type: 'warning',
+              timer: 1000, // 1 segundo
+              showConfirmButton: false
+            });
+            return;
+          }
+        
 
     		
 
