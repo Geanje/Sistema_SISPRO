@@ -63,7 +63,7 @@ if ($_SESSION['ventas']==1)
                           <div class="form-group col-lg-7 col-md-7 col-sm-7 col-xs-12">
                             <label>Cliente(*):</label>
                             <input type="hidden" name="idventa" id="idventa">
-                            <select id="idcliente" name="idcliente" class="form-control selectpicker" data-live-search="true" required  data-style="btn-success">
+                            <select id="idcliente" name="idcliente" class="form-control selectpicker" data-live-search="true"  data-style="btn-default"></select>
 
                             </select>
                           </div>

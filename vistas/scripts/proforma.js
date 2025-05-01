@@ -13,8 +13,8 @@ function init(){
 	//Cargamos los items al select proveedor
 	//Listamos a los clientes en el select 
 	$.post("../ajax/proforma.php?op=selectCliente", function(r){
-	            $("#idcliente").html(r);
-	            $('#idcliente').selectpicker('refresh');
+		$("#idcliente").html('<option value="" selected disabled>Seleccione cliente</option>' + r);
+		$('#idcliente').selectpicker('refresh');
 	});
 
 
@@ -255,6 +255,25 @@ function guardaryeditar(e)
 			return false;
 		}
 		//---------------------------------------------------------------------
+		e.preventDefault();
+
+		var idcliente = $('#idcliente').val() || $('#idcliente').data('idcliente');
+		
+		if (!idcliente) {
+			swal({
+				title: 'Error!',
+				text: 'Debes seleccionar un cliente',
+				type: 'error',
+				timer: 1000, // 1 segundo
+				showConfirmButton: false
+			});
+			return false;
+		}
+	
+		var formData = new FormData($("#formulario")[0]);
+		
+		formData.set('idcliente', idcliente);
+	
 	
 	$.ajax({
 		url: "../ajax/proforma.php?op=guardaryeditar",
