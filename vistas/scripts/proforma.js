@@ -476,7 +476,7 @@ function agregarDetalle(idarticulo,articulo,unidad_medida,precio_venta,afectacio
     
     	// '<td><input type="number" name="impuest[]" value="'+igv+'"></td>'+
     	'<td><span name="impuest" id="impuest'+cont+'" >'+igv.toFixed(2)+'</span></td>'+
-    	'<td><input type="number" step="0.01" name="precio_venta[]" id="precio_venta'+cont+'" value="'+precio_venta+'" style="width:100px"></td>'+
+    	'<td><input type="number" step="0.1" name="precio_venta[]" id="precio_venta'+cont+'" value="'+precio_venta+'" style="width:100px"></td>'+
     	'<td><span name="valor_venta_t" id="valor_venta_t'+cont+'" >'+valorVentaT.toFixed(2)+'</span></td>'+
     	
     	'<td><span name="subtotal" id="subtotal'+cont+'">'+subtotal+'</span></td>'+
