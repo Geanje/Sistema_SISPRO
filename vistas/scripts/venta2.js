@@ -449,7 +449,23 @@ function agregarDetalle(idarticulo, articulo, unidad_medida, precio_venta, afect
 	var descuento = 0;
 	if (idarticulo != "") {
 
+  var existe = false;
+  $('input[name="idarticulo[]"').each(function(){
+    if ($(this).val() == idarticulo){
+      existe = true;
+    }
+  });
 
+  if (existe) {
+    swal({
+      title: '¡Error!',
+      text: '¡El articulo ya fue agregado!',
+      type: 'warning',
+      timer: 1000, // 1 segundo
+      showConfirmButton: false
+    });
+    return;
+  }
 
 		if (afectacion == 'Exonerado') {
 			// var subtotal=cantidad*precio_venta;
