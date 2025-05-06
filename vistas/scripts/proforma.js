@@ -169,26 +169,82 @@ function mostrarform(flag)
 
 
 
-//Función cancelarform
-function cancelarform()
-{
-	swal({
-        title: '¿Estás seguro?',
-        text: 'Se perderán los cambios no guardados.',
-        type: 'warning',
-        showCancelButton: true,
-		confirmButtonColor: '#147CA9',
-        confirmButtonText: 'Si',
-        cancelButtonText: 'No',
-        closeOnConfirm: true,
-        closeOnCancel: true
-    }, function(isConfirm) {
-        if (isConfirm) {
-            limpiar();
-            mostrarform(false);
-        }
-    });
+
+// Función para verificar si el formulario está vacío
+function formularioEstaVacio() {
+  // Verificar campos principales
+  if ($('#idcliente').val() !== null && $('#idcliente').val() !== '') return false;
+  if ($('#fecha_hora').val() !== '') return false;
+  
+  // Verificar si hay artículos agregados
+  if ($('#detalles tbody tr').length > 0) return false;
+  
+  // Verificar otros campos
+  if ($('#tiempoEntrega').val() !== '') return false;
+  if ($('#validez').val() !== '') return false;
+  
+  return true;
 }
+
+// Función cancelarform
+function cancelarform() {
+  // Si el formulario está vacío, redirigir sin preguntar
+  if (formularioEstaVacio()) {
+      limpiar();
+      mostrarform(false);
+      return;
+  }
+  
+  swal({
+      title: '¿Estás seguro de salir?',
+      text: 'Se perderán los cambios no guardados.',
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Si',
+      confirmButtonColor: '#147CA9',
+      cancelButtonText: 'No',
+      cancelButtonColor: '#d33',
+  }, function(isConfirm) {
+      if (isConfirm) {
+          limpiar();
+          mostrarform(false);
+      }
+  });
+}
+
+// Función para manejar la navegación
+function manejarNavegacion(event) {
+  // Solo aplicar si estamos en la vista de proforma
+  if (window.location.pathname.includes('proforma.php')) {
+      // Si el formulario no está vacío, mostrar advertencia
+      if (!formularioEstaVacio()) {
+          event.preventDefault();
+          swal({
+              title: '¿Estás seguro de salir?',
+              text: 'Se perderán los cambios no guardados.',
+              type: 'warning',
+              showCancelButton: true,
+              confirmButtonText: 'Si',
+              confirmButtonColor: '#147CA9',
+              cancelButtonText: 'No',
+              cancelButtonColor: '#d33',
+          }, function(isConfirm) {
+              if (isConfirm) {
+                  limpiar();
+                  window.location.href = event.target.href;
+              }
+          });
+      }
+  }
+}
+
+// Agregar evento click a todos los enlaces del menú
+$(document).ready(function() {
+  $('.treeview-menu a').on('click', manejarNavegacion);
+});
+
+
+
 
 //Función Listar, sin detectar que realiza 
 function listar()//al parecer lista las proformas guardadas
@@ -480,7 +536,7 @@ function agregarDetalle(idarticulo,articulo,unidad_medida,precio_venta,afectacio
     	var fila='<tr class="filas" id="fila'+cont+'">'+
     	'<td><button type="button" class="btn btn-danger" onclick="eliminarDetalle('+cont+')">X</button></td>'+
     	'<td><input type="hidden" id="idarticulo[]" name="idarticulo[]" value="'+idarticulo+'">'+articulo+'</td>'+
-    	'<td><input type="text" name="serieProforma[]" id="serieProforma[]" required style="width:100px"></td>'+
+    	'<td><input type="text" name="serieProforma[]" id="serieProforma[]" style="width:100px"></td>'+
     	'<td><input type="hidden" name="afectacio[]" value="'+afectacion+'"><input type="hidden" name="unidad_medida[]" value="">'+unidad_medida+'</td>'+
     
     	'<td><input type="number" name="cantidad[]" min="1" id="cantidad'+cont+'" value="'+cantidad+'" style="width:50px"></td>'+
