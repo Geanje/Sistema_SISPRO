@@ -174,7 +174,6 @@ function mostrarform(flag)
 function formularioEstaVacio() {
   // Verificar campos principales
   if ($('#idcliente').val() !== null && $('#idcliente').val() !== '') return false;
-  if ($('#fecha_hora').val() !== '') return false;
   
   // Verificar si hay artículos agregados
   if ($('#detalles tbody tr').length > 0) return false;
