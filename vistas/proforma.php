@@ -258,6 +258,7 @@ else
 
 require 'footer.php';
 ?>
+<script src="...sweetalert.min.js"></script>
 <script type="text/javascript" src="scripts/proforma.js"></script>
 <?php
 }

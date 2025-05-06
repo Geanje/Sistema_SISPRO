@@ -172,8 +172,22 @@ function mostrarform(flag)
 //Función cancelarform
 function cancelarform()
 {
-	limpiar();
-	mostrarform(false);
+	swal({
+        title: '¿Estás seguro?',
+        text: 'Se perderán los cambios no guardados.',
+        type: 'warning',
+        showCancelButton: true,
+		confirmButtonColor: '#147CA9',
+        confirmButtonText: 'Si',
+        cancelButtonText: 'No',
+        closeOnConfirm: true,
+        closeOnCancel: true
+    }, function(isConfirm) {
+        if (isConfirm) {
+            limpiar();
+            mostrarform(false);
+        }
+    });
 }
 
 //Función Listar, sin detectar que realiza 
